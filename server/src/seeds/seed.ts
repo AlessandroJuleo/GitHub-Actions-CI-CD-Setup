@@ -4,8 +4,10 @@ import cleanDB from "./cleanDb.js";
 import fs from "fs";
 import path from "path";
 
-// Leer JSON manualmente para evitar errores de importación
-const jsonPath = path.join(__dirname, "pythonQuestions.json");
+// Obtener la ruta del JSON
+const jsonPath = path.join(path.resolve(), "server/src/seeds/pythonQuestions.json");
+
+// Leer el JSON manualmente
 const pythonQuestions = JSON.parse(fs.readFileSync(jsonPath, "utf-8"));
 
 db.once("open", async () => {

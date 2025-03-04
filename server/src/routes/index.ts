@@ -5,12 +5,14 @@ import apiRoutes from "./api/index.js";
 
 const router = express.Router();
 
-// Usar las rutas de API
+// 🔥 Obtener __dirname SIN import.meta.url
+const __dirname = path.resolve(path.dirname(""));
+
 router.use("/api", apiRoutes);
 
-// Servir el frontend de React en producción
+// 🔥 Servir el frontend correctamente
 router.use((_req: Request, res: Response) => {
-  res.sendFile(path.resolve("client/dist/index.html"));
+  res.sendFile(path.join(__dirname, "client/dist/index.html"));
 });
 
 export default router;

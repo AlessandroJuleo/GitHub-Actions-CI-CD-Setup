@@ -4,22 +4,22 @@ import cleanDB from "./cleanDb.js";
 import fs from "fs";
 import path from "path";
 
-// Obtener la ruta del JSON correctamente
-const jsonPath = path.join(process.cwd(), "server/src/seeds/pythonQuestions.json");
+// 🔥 Forzar la ruta correcta del JSON
+const jsonPath = path.resolve("server/src/seeds/pythonQuestions.json");
 
-// Verificar si el archivo JSON realmente existe antes de cargarlo
+// 🔥 Verificar si el archivo realmente existe
 if (!fs.existsSync(jsonPath)) {
-  console.error(`Error: No se encontró el archivo JSON en ${jsonPath}`);
+  console.error(`❌ Error: No se encontró el archivo JSON en ${jsonPath}`);
   process.exit(1);
 }
 
-// Leer el JSON manualmente sin `assert { type: "json" }`
+// 🔥 Leer el JSON manualmente sin importaciones
 const pythonQuestions = JSON.parse(fs.readFileSync(jsonPath, "utf-8"));
 
 db.once("open", async () => {
   await cleanDB("Question", "questions");
   await Question.insertMany(pythonQuestions);
 
-  console.log("Questions seeded!");
+  console.log("✅ Questions seeded!");
   process.exit(0);
 });

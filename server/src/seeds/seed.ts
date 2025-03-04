@@ -7,7 +7,7 @@ import path from "path";
 // Obtener la ruta del JSON correctamente
 const jsonPath = path.join(process.cwd(), "server/src/seeds/pythonQuestions.json");
 
-// Verificar si el archivo JSON realmente existe
+// Verificar si el archivo JSON realmente existe antes de cargarlo
 if (!fs.existsSync(jsonPath)) {
   console.error(`Error: No se encontró el archivo JSON en ${jsonPath}`);
   process.exit(1);

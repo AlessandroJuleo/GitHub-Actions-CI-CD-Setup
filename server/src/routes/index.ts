@@ -5,7 +5,7 @@ import apiRoutes from "./api/index.js";
 
 const router = express.Router();
 
-// Servir las rutas de la API
+// Usar las rutas de API
 router.use("/api", apiRoutes);
 
 // Servir el frontend de React en producción

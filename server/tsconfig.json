@@ -1,16 +1,14 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    /* Modules */
-    
-    "rootDir": "./src" /* Specify the root folder within your source files. */,
+    "rootDir": "./src",
     "moduleResolution": "node",
-    "module": "CommonJS",
+    "module": "esnext",
     "target": "ES6",
     "strict": true,
-    /* Emit */
-    "outDir": "./dist" /* Specify an output folder for all emitted files. */
-    // "noEmitOnError": true /* Disable emitting files if any type checking errors are reported. */
+    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "esModuleInterop": true
   },
   "include": ["src"],
   "typeRoots": ["./node_modules/@types", "./src/types"]

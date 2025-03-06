@@ -21,7 +21,7 @@ mongoose
   .catch((err) => console.error("🔴 Error conectando a MongoDB:", err));
 
 // Ruta de prueba
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.send("🚀 API funcionando correctamente!");
 });
 

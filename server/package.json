@@ -1,29 +1,27 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
-  "main": "dist/server.js",
-  "type": "module",
+  "description": "Backend del quiz",
+  "main": "dist/index.js",
+  "type": "commonjs",
   "scripts": {
     "build": "tsc",
-    "seed": "node dist/seeds/seed.js",
     "start": "node dist/index.js",
-    "watch": "nodemon dist/server.js",
     "dev": "ts-node src/index.ts",
+    "seed": "node dist/seeds/seed.js",
+    "watch": "nodemon src/index.ts",
     "test": "vitest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
-    "mongoose": "^8.0.0"
+    "mongoose": "^8.0.0",
+    "dotenv": "^16.4.7",
+    "cors": "^2.8.5"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/node": "^20.14.8",
-    "dotenv": "^16.4.5",
-    "msw": "^2.3.1",
+    "ts-node": "^10.9.1",
     "nodemon": "^3.1.0",
     "typescript": "^5.4.5",
     "vitest": "^2.0.1"

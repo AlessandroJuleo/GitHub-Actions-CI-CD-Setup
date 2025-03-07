@@ -1,17 +1,16 @@
 {
-  "extends": "../tsconfig.json",
   "compilerOptions": {
     "rootDir": "./src",
+    "outDir": "./dist",
     "moduleResolution": "node",
-    "module": "esnext",
+    "module": "NodeNext",
     "target": "ES6",
     "strict": true,
     "resolveJsonModule": true,
-    "outDir": "./dist",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "preserveSymlinks": true
   },
   "include": ["src"],
-  "typeRoots": ["./node_modules/@types", "./src/types"]
+  "exclude": ["node_modules", "dist"]
 }
